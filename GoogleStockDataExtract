@@ -1,0 +1,7 @@
+#may not work for people using Python 3.6, if you are using 3.3, try importing the google_screener_data_extract model and running this code
+from google_screener_data_extract import GoogleStockDataExtract
+
+hh = GoogleStockDataExtract()
+hh.target_exchange = 'NASDAQ'  # SGX, NYSE, NYSEMKT
+hh.retrieve_all_stock_data()
+hh.result_google_ext_df.to_csv(r'c:\data\temp.csv', index=False)  # save filename
